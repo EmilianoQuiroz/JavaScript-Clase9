@@ -82,3 +82,94 @@ Determinar el evento especificando el manejador de evento en el atributo de una 
 La función puede declararse entre la comillas o bien tomarse una referencia existen en el script.
 */
 //001835
+
+//--- EVENTOS MÁS COMUNES ---//
+/*
+EVENTOS DEL MOUSE
+Se producen por la interacción del usuario con el mouse.
+Entre ellos se destacarán los que se encuentran a continuación.
+
+-mousedown/mouseup: 
+Se oprime/suelta el botón del ratón sobre un elemento.
+-mouseover/mouseout:  
+El puntero del mouse se mueve sobre/sale del elemento.
+-mousemove: 
+El movimiento del mouse sobre el elemento activa el evento.
+-click: 
+Se activa después de mousedown o mouseup sobre un elemento válido.
+
+//CODIGO HTML DE REFERENCIA
+<button id="btnMain">CLICK</button>
+//CODIGO JS
+let boton = document.getElementById("btnMain")
+boton.onclick = () => {console.log("Click")}
+boton.onmousemove = () => {console.log("Move")}
+*/
+
+/*
+EVENTOS DE TECLADO
+Se producen por la interacción del usuario con el teclado. 
+Entre ellos se destacarán los que se encuentran a continuación.
+
+keydown: Cuando se presiona.
+keyup: Cuando se suelta una tecla.
+
+//CODIGO HTML DE REFERENCIA
+<input id = "nombre" type="text">
+<input id = "edad"   type="number">
+//CODIGO JS
+let input1 = document.getElementById("nombre")
+let input2 = document.getElementById("edad")
+input1.onkeyup = () => {console.log("keyUp")}
+input2.onkeydown = () => {console.log("keyDown")}
+*/
+
+/*
+EVENTO CHANGE
+El evento change se activa cuando se detecta un cambio en el valor del elemento. 
+Por ejemplo, mientras se escribe en un input de tipo texto no hay evento change, pero cuando se pasa a otra sección de la aplicación entonces sí ocurre.
+
+//CODIGO HTML DE REFERENCIA
+<input id = "nombre" type="text">
+<input id = "edad"   type="number">
+//CODIGO JS
+let input1  = document.getElementById("nombre");
+let input2  = document.getElementById("edad");
+input1.onchange = () => {console.log("valor1")};
+input2.onchange = () => {console.log("valor2")};
+*/
+
+/*
+EVENTO INPUT
+Si queremos ejecutar una función cada vez que se tipea sobre el campo, conviene trabajar directamente con el evento input.
+
+//CODIGO HTML DE REFERENCIA
+<input id = "nombre" type="text">
+
+//CODIGO JS
+let input1  = document.getElementById("nombre")
+input1.addEventListener(‘input’, () => {
+     console.log(input1.value)
+})
+*/
+
+/*
+EVENTO SUBMIT
+El evento submit se activa cuando el formulario es enviado. Normalmente se utiliza para validar el formulario antes de ser enviado al servidor o bien para abortar el envío y procesarlo con JavaScript.
+
+//CODIGO HTML DE REFERENCIA
+ <form id="formulario">
+      <input type="text">
+      <input type="number">
+      <input type="submit" value="Enviar">
+ </form>
+//CODIGO JS
+let miFormulario      = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e){
+    e.preventDefault();
+    console.log("Formulario Enviado");    
+}
+
+*/
